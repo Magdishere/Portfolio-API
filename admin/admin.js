@@ -1,4 +1,4 @@
-const BASE_URL = "https://olivera-backend-s5ul.onrender.com";
+const BASE_URL = "https://portfolio-api-r1wq.onrender.com";
 
 // ----- Tab Switching -----
 const tabButtons = document.querySelectorAll(".tab-btn");
