@@ -6,9 +6,7 @@ import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { ObjectId } from 'mongodb';
 import dotenv from 'dotenv';
-import cookieParser from 'cookie-parser';
 import { connectDB, getProjectsCollection, getSkillsCollection } from './db.js';
-import authRoutes from './routes/auth.js';
 
 dotenv.config();
 
@@ -24,16 +22,10 @@ if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir);
 // Middleware
 app.use(cors({
     origin: 'https://magdishere.github.io', // Allow frontend to connect
-    credentials: true // Allow cookies
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
 app.use('/uploads', express.static(uploadDir));
-app.use('/admin', express.static(path.join(__dirname, 'admin')));
-
-// Routes
-app.use('/api/auth', authRoutes);
 
 // Multer setup for images
 const storage = multer.diskStorage({
