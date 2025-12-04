@@ -23,7 +23,7 @@ if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir);
 
 // Middleware
 app.use(cors({
-    origin: 'https://magdishere.github.io/Portfolio-FrontEnd/', // Allow frontend to connect
+    origin: 'https://magdishere.github.io', // Allow frontend to connect
     credentials: true // Allow cookies
 }));
 app.use(express.json());
