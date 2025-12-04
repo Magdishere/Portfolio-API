@@ -24,3 +24,7 @@ export function getProjectsCollection() {
 export function getSkillsCollection() {
   return getDB().collection(process.env.SKILLS_COLLECTION_NAME);
 }
+
+export function getUsersCollection() {
+  return getDB().collection(process.env.USERS_COLLECTION_NAME);
+}
